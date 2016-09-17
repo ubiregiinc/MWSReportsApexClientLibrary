@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:sf="antlib:com.salesforce" default="sf" basedir=".">
+<project xmlns:sf="antlib:com.salesforce" default="Build" basedir=".">
   <target name="Build">
     <echo>Continuous Integration Build</echo>
     <taskdef resource="net/sf/antcontrib/antlib.xml" />
