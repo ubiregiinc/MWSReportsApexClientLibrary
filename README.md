@@ -24,7 +24,7 @@ mws_Client client = new mws_Client('https://mws.amazonservices.jp', 'access_key'
 client.sellerId = 'seller';
 
 // create request with required parameter(s)
-mws_RequestReport action = new mws_RequestReport('_GET_AMAZON_FULFILLED_SHIPMENTS_DATA_');
+mws_RequestReport action = new mws_RequestReport(mws_ReportType.GET_AMAZON_FULFILLED_SHIPMENTS_DATA);
 
 // optionally set parameter(s)
 // action.endDate = DateTime.now();
