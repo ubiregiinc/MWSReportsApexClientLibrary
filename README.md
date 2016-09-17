@@ -10,6 +10,8 @@ Currently following operations are implemented.
 - [GetReportListByNextToken](http://docs.developer.amazonservices.com/en_US/reports/Reports_GetReportListByNextToken.html)
 - [GetReport](http://docs.developer.amazonservices.com/en_US/reports/Reports_GetReport.html)
 
+- [UpdateReportAcknowledgements](http://docs.developer.amazonservices.com/en_US/reports/Reports_UpdateReportAcknowledgements.html)
+
 # Usage
 ```apex
 // setup mws_Client with 
