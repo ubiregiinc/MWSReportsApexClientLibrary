@@ -2,13 +2,13 @@
  * http://docs.developer.amazonservices.com/en_US/reports/Reports_RequestReport.html
  */
 public class mws_RequestReport extends mws_Request {
-  public String reportType {get; set;}
+  public mws_ReportType reportType {get; set;}
   public DateTime startDate {get; set;}
   public DateTime endDate {get; set;}
   public String reportOptions {get; set;}
   public List<String> marketplaceIdList {get; set;}
   
-  public mws_RequestReport(String reportType) {
+  public mws_RequestReport(mws_ReportType reportType) {
     super('Reports', '2009-01-01', 'RequestReport');
     this.reportType = reportType;
   }

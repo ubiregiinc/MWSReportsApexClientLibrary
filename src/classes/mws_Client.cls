@@ -60,8 +60,8 @@ public class mws_Client {
     Map<String, String> result = new Map<String, String>();
     for (String key : params.keySet()) {
       Object param = params.get(key);
-      if (param instanceof List<String>) {
-        List<String> l = (List<String>) param;
+      if (param instanceof List<Object>) {
+        List<Object> l = (List<Object>) param;
         for (Integer i = 0; i < l.size(); i++) {
           result.put(key + '.Id.' + (i+1), encodeParam(l[i]));
         }
@@ -77,6 +77,9 @@ public class mws_Client {
     if (param instanceof DateTime) {
       DateTime dt = (DateTime) param;
       result = dt.formatGmt('yyyy-MM-dd\'T\'HH:mm:ss\'Z\'');
+    } else if (param instanceof mws_ReportType) {
+      mws_ReportType rt = (mws_ReportType) param;
+      result = '_' + rt.name() + '_';
     } else if (param == null) {
       result = '';
     } else {

@@ -42,7 +42,7 @@ public class mws_GetReportListTest {
     System.assertEquals(1, response.reports.size());
     mws_ReportInfo report = response.reports.get(0);
     System.assertEquals('898899473', report.reportId);
-    System.assertEquals('_GET_MERCHANT_LISTINGS_DATA_', report.reportTYpe);
+    System.assertEquals(mws_ReportType.GET_MERCHANT_LISTINGS_DATA, report.reportTYpe);
     System.assertEquals('2278662938', report.reportRequestId);
     System.assertEquals(DateTime.newInstanceGmt(2009, 2, 10, 9, 22, 33), report.availableDate);
     System.assertEquals(false, report.acknowledged);

@@ -34,11 +34,11 @@ public class mws_RequestReportTest {
     
     Test.startTest();
     
-    mws_RequestReport action = new mws_RequestReport('_GET_AMAZON_FULFILLED_SHIPMENTS_DATA_');
+    mws_RequestReport action = new mws_RequestReport(mws_ReportType.GET_AMAZON_FULFILLED_SHIPMENTS_DATA);
     mws_RequestReportResponse response = (mws_RequestReportResponse) client.send(action);
     
     System.assertEquals('2291326454', response.reportRequestId);
-    System.assertEquals('_GET_MERCHANT_LISTINGS_DATA_', response.reportType);
+    System.assertEquals(mws_ReportType.GET_MERCHANT_LISTINGS_DATA, response.reportType);
     System.assertEquals(DateTime.newInstanceGmt(2009, 1, 21, 2, 10, 39), response.startDate);
     System.assertEquals(DateTime.newInstanceGmt(2009, 2, 13, 2, 10, 39), response.endDate);
     System.assertEquals(false, response.scheduled);
@@ -68,7 +68,7 @@ public class mws_RequestReportTest {
       
     Test.startTest();
     
-    mws_RequestReport action = new mws_RequestReport('_GET_AMAZON_FULFILLED_SHIPMENTS_DATA_');
+    mws_RequestReport action = new mws_RequestReport(mws_ReportType.GET_AMAZON_FULFILLED_SHIPMENTS_DATA);
     
     try {
       mws_RequestReportResponse response = (mws_RequestReportResponse) client.send(action);

@@ -1,6 +1,6 @@
 public class mws_GetReportList extends mws_Request {
   public Integer maxCount {get; set;}
-  public List<String> reportTypeList {get; set;}
+  public List<mws_ReportType> reportTypeList {get; set;}
   public Boolean acknowledged {get; set;}
   public DateTime availableFromDate {get; set;}
   public DateTime availableToDate {get; set;}
