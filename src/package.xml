@@ -19,6 +19,8 @@
         <members>mws_RequestReportResponse</members>
         <members>mws_RequestReportTest</members>
         <members>mws_Response</members>
+        <members>mws_UpdateReportAcknowledgements</members>
+        <members>mws_UpdateReportAcknowledgementsTest</members>
         <name>ApexClass</name>
     </types>
     <version>36.0</version>
