@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:sf="antlib:com.salesforce" default="sf" basedir=".">
+  <target name="Build">
+    <echo>Continuous Integration Build</echo>
+    <taskdef resource="net/sf/antcontrib/antlib.xml" />
+    <property environment="env" />
+    <echo>Branch: ${env.CIRCLE_BRANCH}</echo>
+    <property file="build.ci.properties" />
+    <echo>${build.cmd}</echo>
+    <antcall target="${build.cmd}" />
+  </target>
+  <target name="DeployAndCheckOnly">
+    <echo>Deploy Code CheckOnly in Org with username: ${sf.username}</echo>
+    <sf:deploy username="${env.username}" password="${env.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="${user.dir}/src" logType="Detail" checkOnly="${sf.checkOnly}" />
+  </target>
+  <target name="DeployAndRunAllTests">
+    <echo>Deploy and RunAllTests in Org with username: ${sf.username}</echo>
+    <sf:deploy username="${env.username}" password="${env.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="${user.dir}/src" logType="Detail" runallTests="${sf.runallTests}" />
+  </target>
+
+  <target name="deployAndTestAndReport">
+      <taskdef
+          name="sfdeploy"
+          classname="com.claimvantage.force.ant.DeployWithXmlReportTask"
+          classpath="${user.dir}/lib"
+          />
+      <delete dir="junit" quiet="true"/>
+      <sfdeploy
+          username="${env.username}"
+          password="${env.password}"
+          serverurl="${sf.serverurl}"
+          deployRoot="${user.dir}/src"
+          runalltests="false"
+          junitreportdir="junit"
+          >
+          <!-- Run only tests with file names that match this pattern -->
+          <batchtest>
+              <fileset dir="src/classes">
+                  <include name="*Test.cls"/>
+              </fileset>
+          </batchtest>
+      </sfdeploy>
+  </target>
+</project>

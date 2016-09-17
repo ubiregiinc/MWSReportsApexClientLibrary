@@ -1,0 +1,7 @@
+test:
+  override:
+    - ant -lib lib/ Build: 
+        timeout: 600
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/junit/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
