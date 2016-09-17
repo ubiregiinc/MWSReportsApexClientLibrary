@@ -41,7 +41,7 @@ public class mws_UpdateReportAcknowledgementsTest {
     System.assertEquals(1, response.reports.size());
     mws_ReportInfo report = response.reports.get(0);
     System.assertEquals('841997483', report.reportId);
-    System.assertEquals('_GET_MERCHANT_LISTINGS_DATA_', report.reportTYpe);
+    System.assertEquals(mws_ReportType.GET_MERCHANT_LISTINGS_DATA, report.reportTYpe);
     System.assertEquals('2234038326', report.reportRequestId);
     System.assertEquals(DateTime.newInstanceGmt(2009, 1, 6, 3, 48, 36), report.availableDate);
     System.assertEquals(true, report.acknowledged);

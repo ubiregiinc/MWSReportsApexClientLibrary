@@ -28,4 +28,14 @@ public class mws_DomUtil {
     String v = string(node, name);
     return v != null ? (Boolean) JSON.deserialize(v, Boolean.class) : null;
   }
+
+  public static mws_ReportType reportType(Dom.XmlNode node, String name) {
+    name = string(node, name);
+    for (mws_ReportType reportType : mws_ReportType.values()) {
+      if (name.equals('_' + reportType.name() + '_')) {
+        return reportType;
+      }
+    }
+    return null;
+  }
 }

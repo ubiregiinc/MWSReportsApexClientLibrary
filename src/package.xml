@@ -14,6 +14,7 @@
         <members>mws_GetReportTest</members>
         <members>mws_HttpCalloutMock</members>
         <members>mws_ReportInfo</members>
+        <members>mws_ReportType</members>
         <members>mws_Request</members>
         <members>mws_RequestReport</members>
         <members>mws_RequestReportResponse</members>

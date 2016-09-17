@@ -3,7 +3,7 @@
  */
 public class mws_RequestReportResponse extends mws_Response {
   public String reportRequestId {get; set;}
-  public String reportType {get; set;}
+  public mws_ReportType reportType {get; set;}
   public DateTime startDate {get; set;}
   public DateTime endDate {get; set;}
   public Boolean scheduled {get; set;}
@@ -19,7 +19,7 @@ public class mws_RequestReportResponse extends mws_Response {
     Dom.XmlNode reportRequestInfo = mws_DomUtil.child(requestReportResult, 'ReportRequestInfo');
     
     reportRequestId = mws_DomUtil.string(reportRequestInfo, 'ReportRequestId');
-    reportType = mws_DomUtil.string(reportRequestInfo, 'ReportType');
+    reportType = mws_DomUtil.reportType(reportRequestInfo, 'ReportType');
     startDate = mws_DomUtil.datetime(reportRequestInfo, 'StartDate');
     endDate = mws_DomUtil.datetime(reportRequestInfo, 'EndDate');
     scheduled = mws_DomUtil.boolean(reportRequestInfo, 'Scheduled');

@@ -9,7 +9,7 @@
   */
 public class mws_ReportInfo {
   public String reportId {get; set;}
-  public String reportType {get; set;}
+  public mws_ReportType reportType {get; set;}
   public String reportRequestId {get; set;}
   public DateTime availableDate {get; set;}
   public Boolean acknowledged {get; set;}
@@ -17,7 +17,7 @@ public class mws_ReportInfo {
   
   public mws_ReportInfo(Dom.XmlNode node) {
     reportId = mws_DomUtil.string(node, 'ReportId');
-    reportType = mws_DomUtil.string(node, 'ReportType');
+    reportType = mws_DomUtil.reportType(node, 'ReportType');
     reportRequestId = mws_DomUtil.string(node, 'ReportRequestId');
     availableDate = mws_DomUtil.datetime(node, 'AvailableDate');
     acknowledged = mws_DomUtil.boolean(node, 'Acknowledged');
