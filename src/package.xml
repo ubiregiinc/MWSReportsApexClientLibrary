@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>mws_Client</members>
+        <members>mws_ClientTest</members>
+        <members>mws_DomUtil</members>
+        <members>mws_Error</members>
+        <members>mws_ErrorResponseException</members>
+        <members>mws_GetReport</members>
+        <members>mws_GetReportList</members>
+        <members>mws_GetReportListByNextToken</members>
+        <members>mws_GetReportListResponse</members>
+        <members>mws_GetReportListTest</members>
+        <members>mws_GetReportTest</members>
+        <members>mws_HttpCalloutMock</members>
+        <members>mws_ReportInfo</members>
+        <members>mws_Request</members>
+        <members>mws_RequestReport</members>
+        <members>mws_RequestReportResponse</members>
+        <members>mws_RequestReportTest</members>
+        <members>mws_Response</members>
+        <name>ApexClass</name>
+    </types>
+    <version>36.0</version>
+</Package>
