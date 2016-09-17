@@ -1,5 +1,6 @@
-# MWSReportsApexClientLibrary
+# MWSReportsApexClientLibrary ![ci-status](https://circleci.com/gh/ubiregiinc/MWSReportsApexClientLibrary.png?style=shield&circle-token=4795b9bf49b5e591b7943a4d02616faae6537916)
 Apex client for Amazon Marketplace Web Service (Amazon MWS) Reports API (version 2009-01-01)
+
 API reference: http://docs.developer.amazonservices.com/en_US/reports/
 
 # Supported action
@@ -9,7 +10,6 @@ Currently following operations are implemented.
 - [GetReportList](http://docs.developer.amazonservices.com/en_US/reports/Reports_GetReportList.html)
 - [GetReportListByNextToken](http://docs.developer.amazonservices.com/en_US/reports/Reports_GetReportListByNextToken.html)
 - [GetReport](http://docs.developer.amazonservices.com/en_US/reports/Reports_GetReport.html)
-
 - [UpdateReportAcknowledgements](http://docs.developer.amazonservices.com/en_US/reports/Reports_UpdateReportAcknowledgements.html)
 
 # Usage
